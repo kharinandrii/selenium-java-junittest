@@ -6,5 +6,22 @@ public class FirstClassTest extends TestBase{
     @Test
     public void testCase()  {
         driver.get("http://opencart.abstracta.us/");
+        mainPage.openDrobDown()
+                .clickOnRegisterButton();
+        safetyPage.clickAdditionally()
+                  .clickRegisterLink();
+        registerPage.setFirstName()
+                    .setLastName()
+                    .setEmail()
+                    .setPhone()
+                    .setAddress()
+                    .setCity()
+                    .setPostcode()
+                    .chooseRegion("3513")
+                    .setPassword(params.PASSWORD)
+                    .setConfirm(params.PASSWORD)
+                    .setCheckbox()
+                    .clickOnContinue();
+
     }
 }
