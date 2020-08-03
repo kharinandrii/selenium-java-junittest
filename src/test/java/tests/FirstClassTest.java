@@ -22,6 +22,9 @@ public class FirstClassTest extends TestBase{
                     .setConfirm(params.PASSWORD)
                     .setCheckbox()
                     .clickOnContinue();
+        successPage.getSuccessMessage(params.EXPECTED_SUCCESS_MESSAGE)
+                    .clickContinueLink();
+
 
     }
 }

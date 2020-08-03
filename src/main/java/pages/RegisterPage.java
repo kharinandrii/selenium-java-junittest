@@ -67,7 +67,7 @@ public class RegisterPage extends BaseClass {
     }
     public RegisterPage setPostcode () {
         String postcode = getPostcode();
-        sendKeysData(phoneField, postcode);
+        sendKeysData(postcodeField, postcode);
         return this;
     }
     public RegisterPage chooseRegion(String value) {
@@ -75,11 +75,11 @@ public class RegisterPage extends BaseClass {
         return this;
     }
     public RegisterPage setPassword(String password) {
-        sendKeysData(phoneField, password);
+        sendKeysData(passwordField, password);
         return this;
     }
     public RegisterPage setConfirm(String password) {
-        sendKeysData(cityField, password);
+        sendKeysData(confirmField, password);
         return this;
     }
     public RegisterPage setCheckbox() {

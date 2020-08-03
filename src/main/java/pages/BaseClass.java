@@ -48,11 +48,10 @@ public class BaseClass {
     public String getCity() {
         return faker.address().city();
     }
-    public String getPostcode() {
-        return faker.address().zipCode();
-    }
-
-
-
+    public String getPostcode() { return faker.address().zipCode(); }
+//    public void clickOnTextLink(String text) {
+//        driver.findElement(By.xpath(""+ text +""));
+//
+//    }
 
 }

@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import pages.MainPage;
 import pages.RegisterPage;
 import pages.SafetyPage;
+import pages.SuccessPage;
 import tools.Params;
 
 import java.util.concurrent.TimeUnit;
@@ -19,6 +20,7 @@ public class TestBase {
     SafetyPage safetyPage;
     RegisterPage registerPage;
     Params params;
+    SuccessPage successPage;
 
     @BeforeEach
     public void setUP() {
@@ -30,6 +32,7 @@ public class TestBase {
         safetyPage = PageFactory.initElements(driver, SafetyPage.class);
         registerPage = PageFactory.initElements(driver, RegisterPage.class);
         params = PageFactory.initElements(driver, Params.class);
+        successPage = PageFactory.initElements(driver, SuccessPage.class);
 
     }
     @AfterEach
