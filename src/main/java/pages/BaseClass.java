@@ -49,9 +49,9 @@ public class BaseClass {
         return faker.address().city();
     }
     public String getPostcode() { return faker.address().zipCode(); }
-//    public void clickOnTextLink(String text) {
-//        driver.findElement(By.xpath(""+ text +""));
-//
-//    }
+    public void clickOnButtonWithValue(String value) {
+        driver.findElement(By.xpath("//*[@value = '"+ value +"']")).click();
+
+    }
 
 }

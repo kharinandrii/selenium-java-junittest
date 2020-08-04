@@ -2,10 +2,10 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 
-public class FirstClassTest extends TestBase{
+public class UserRegister extends TestBase{
     @Test
-    public void testCase()  {
-        driver.get("http://opencart.abstracta.us/");
+    public void registerTestCase()  {
+
         mainPage.openDrobDown()
                 .clickOnRegisterButton();
         safetyPage.clickAdditionally()
@@ -20,11 +20,12 @@ public class FirstClassTest extends TestBase{
                     .chooseRegion("3513")
                     .setPassword(params.PASSWORD)
                     .setConfirm(params.PASSWORD)
-                    .setCheckbox()
-                    .clickOnContinue();
+                    .setCheckbox();
+        baseClass.clickOnButtonWithValue("Continue");
         successPage.getSuccessMessage(params.EXPECTED_SUCCESS_MESSAGE)
                     .clickContinueLink();
 
 
     }
+
 }

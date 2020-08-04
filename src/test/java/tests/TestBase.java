@@ -6,10 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import pages.MainPage;
-import pages.RegisterPage;
-import pages.SafetyPage;
-import pages.SuccessPage;
+import pages.*;
 import tools.Params;
 
 import java.util.concurrent.TimeUnit;
@@ -21,6 +18,8 @@ public class TestBase {
     RegisterPage registerPage;
     Params params;
     SuccessPage successPage;
+    BaseClass baseClass;
+    LoginPage loginPage;
 
     @BeforeEach
     public void setUP() {
@@ -28,11 +27,14 @@ public class TestBase {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.get("http://opencart.abstracta.us/");
         mainPage = PageFactory.initElements(driver, MainPage.class);
         safetyPage = PageFactory.initElements(driver, SafetyPage.class);
         registerPage = PageFactory.initElements(driver, RegisterPage.class);
         params = PageFactory.initElements(driver, Params.class);
         successPage = PageFactory.initElements(driver, SuccessPage.class);
+        baseClass = PageFactory.initElements(driver,BaseClass.class);
+        loginPage = PageFactory.initElements(driver, LoginPage.class);
 
     }
     @AfterEach

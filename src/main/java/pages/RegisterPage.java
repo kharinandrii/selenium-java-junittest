@@ -31,8 +31,6 @@ public class RegisterPage extends BaseClass {
     private WebElement confirmField;
     @FindBy(xpath = "//*[@name = 'agree']")
     private WebElement checkBox;
-    @FindBy(xpath = "//*[@value = 'Continue']")
-    private WebElement continueButton;
 
     public RegisterPage setFirstName() {
         String name = getFirstName();
@@ -84,10 +82,6 @@ public class RegisterPage extends BaseClass {
     }
     public RegisterPage setCheckbox() {
         clickOnElement(checkBox);
-        return this;
-    }
-    public RegisterPage clickOnContinue() {
-        clickOnElement(continueButton);
         return this;
     }
     //TODO закончить с регистрации - создать класс с следующей после регистрации страницей
