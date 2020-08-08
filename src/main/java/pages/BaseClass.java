@@ -53,5 +53,8 @@ public class BaseClass {
         driver.findElement(By.xpath("//*[@value = '"+ value +"']")).click();
 
     }
+    public void clickOnAddCart(String text) {
+        driver.findElement(By.xpath("//*[text() = '" + text + "']"));
+    }
 
 }

@@ -1,6 +1,7 @@
 package tests;
 
-import org.junit.jupiter.api.Test;
+
+import org.testng.annotations.Test;
 
 public class UserRegister extends TestBase{
     @Test

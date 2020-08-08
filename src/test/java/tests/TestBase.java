@@ -1,11 +1,11 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import pages.*;
 import tools.Params;
 
@@ -20,8 +20,9 @@ public class TestBase {
     SuccessPage successPage;
     BaseClass baseClass;
     LoginPage loginPage;
+    MarketPage marketPage;
 
-    @BeforeEach
+    @BeforeClass
     public void setUP() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -35,9 +36,10 @@ public class TestBase {
         successPage = PageFactory.initElements(driver, SuccessPage.class);
         baseClass = PageFactory.initElements(driver,BaseClass.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
+        marketPage = PageFactory.initElements(driver,MarketPage.class );
 
     }
-    @AfterEach
+    @AfterClass
     public void driverClose() {
         driver.quit();
     }

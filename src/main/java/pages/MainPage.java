@@ -15,6 +15,8 @@ public class MainPage extends BaseClass {
     private WebElement registerButton;
     @FindBy(xpath = "//*[text() = 'Login']")
     private WebElement loginLink;
+    @FindBy(xpath = "//*[text() = 'Logout']")
+    private WebElement logoutLink;
 
     public MainPage openDrobDown() {
         clickOnElement(drobDown);
@@ -28,6 +30,9 @@ public class MainPage extends BaseClass {
         clickOnElement(loginLink);
         return this;
     }
-
+    public MainPage userLogout() {
+        clickOnElement(logoutLink);
+        return this;
+    }
 
 }

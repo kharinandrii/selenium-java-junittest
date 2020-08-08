@@ -46,6 +46,7 @@ public class RegisterPage extends BaseClass {
     public RegisterPage setEmail() {
         String email = hashMap.get("name") + "@test.com";
         sendKeysData(emailField, email);
+        hashMap.put("email", email);
         return this;
     }
     public RegisterPage setPhone() {

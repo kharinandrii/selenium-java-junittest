@@ -15,7 +15,8 @@ public class LoginPage extends BaseClass {
     @FindBy(xpath = "//*[@id = 'input-password']")
     private WebElement passwordField;
 
-    public LoginPage fillLoginField(String login) {
+    public LoginPage fillLoginField() {
+        String login = hashMap.get("email");
         sendKeysData(loginField, login);
         return this;
     }
