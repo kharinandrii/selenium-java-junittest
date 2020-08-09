@@ -24,5 +24,8 @@ public class LoginPage extends BaseClass {
         sendKeysData(passwordField, password);
         return this;
     }
+    public void loginPageForCookies(String url) {
+        driver.get(url);
+    }
 
 }

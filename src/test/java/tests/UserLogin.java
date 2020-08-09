@@ -25,20 +25,29 @@ public class UserLogin extends TestBase {
         baseClass.clickOnButtonWithValue("Continue");
         successPage.getSuccessMessage(params.EXPECTED_SUCCESS_MESSAGE)
                 .clickContinueLink();
+       // baseClass.createCookieFile();
+        baseClass.getUserCookie();
         mainPage.openDrobDown()
                 .userLogout();
-
-
+        baseClass.addUserCookie();
+        loginPage.loginPageForCookies(params.LOGIN_URL);
+        marketPage.clickOnDesktopDrobDown()
+                .clickOnDesktopMac();
+        mainPage.clickOnAddCart(params.ADD_TO_CARD);
     }
     @Test
     public void userLogin() {
         mainPage.openDrobDown()
                 .clickOnLoginButton();
-        safetyPage.clickAdditionally()
-                .clickRegisterLink();
-        loginPage.fillLoginField()
-                 .fillPasswordField(params.PASSWORD);
-        baseClass.clickOnButtonWithValue("Login");
+        safetyPage.clickAdditionally();
+        safetyPage .clickRegisterLink();
+        baseClass.addUserCookie();
+      //  baseClass.readCookieFile();
+        loginPage.loginPageForCookies(params.LOGIN_URL);
+//
+//        loginPage.fillLoginField()
+//                 .fillPasswordField(params.PASSWORD);
+//        baseClass.clickOnButtonWithValue("Login");
         marketPage.clickOnDesktopDrobDown()
                 .clickOnDesktopMac();
         mainPage.clickOnAddCart(params.ADD_TO_CARD);
