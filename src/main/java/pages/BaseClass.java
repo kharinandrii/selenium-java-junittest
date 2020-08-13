@@ -11,16 +11,17 @@ import tools.Params;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 
 public class BaseClass {
     public WebDriver driver;
     public WebDriverWait wait;
-    Map<String, String> hashMap = new HashMap<String, String>();
+    static   Map<String, String> hashMap = new HashMap<String, String>();
     Faker faker = new Faker();
     Params params = new Params();
-//    Set<Cookie> cookies;
-    Cookie cookies;
+    Set<Cookie> cookies;
+    Cookie cookieObj;
     public BaseClass(WebDriver driver) {
         this.driver = driver;
         wait =  new WebDriverWait(driver, 15);
@@ -58,23 +59,28 @@ public class BaseClass {
         driver.findElement(By.xpath("//*[@value = '"+ value +"']")).click();
 
     }
-    public void clickOnAddCart(String text) {
+    public void clickOnButtonWithText(String text) {
         driver.findElement(By.xpath("//*[text() = '" + text + "']"));
     }
+    public void getUserCookies(){
+        Set<Cookie> cookies = driver.manage().getCookies();
+    }
+
 
     public void getUserCookie() {
-       /* Set<Cookie>*/ //cookies = driver.manage().getCookies();
-        cookies = driver.manage().getCookieNamed("PHPSESSID");
-        System.out.println(cookies);
-//        System.out.println(cookies.size());
-//        for (Cookie cookie: cookies){
-//            System.out.println(cookie.getName() + " " + cookie.getValue());
-//        }
+     /* Set<Cookie>*/ cookies = driver.manage().getCookies();
+        cookieObj = driver.manage().getCookieNamed("PHPSESSID");
+        System.out.println(cookieObj);
+        System.out.println(cookies.size());
+        for (Cookie cookie: cookies){
+            System.out.println(cookie.getName() + " " + cookie.getValue());
+        }
 
     }
     public void addUserCookie() {
 
-        driver.manage().addCookie(cookies);
+        driver.manage().addCookie(cookieObj);
+        System.out.println(cookies.size());
     }
     //TODO cookies https://www.youtube.com/watch?v=TjLU9Iq9AeE
 //    public void createCookieFile() {

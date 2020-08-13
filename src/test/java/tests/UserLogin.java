@@ -25,15 +25,14 @@ public class UserLogin extends TestBase {
         baseClass.clickOnButtonWithValue("Continue");
         successPage.getSuccessMessage(params.EXPECTED_SUCCESS_MESSAGE)
                 .clickContinueLink();
-       // baseClass.createCookieFile();
-        baseClass.getUserCookie();
-        mainPage.openDrobDown()
-                .userLogout();
-        baseClass.addUserCookie();
-        loginPage.loginPageForCookies(params.LOGIN_URL);
         marketPage.clickOnDesktopDrobDown()
-                .clickOnDesktopMac();
-        mainPage.clickOnAddCart(params.ADD_TO_CARD);
+                .clickOnAllDesctopLink();
+        marketPage.addToCart();
+        productPage.clickOnProductRadio()
+                .clickOnCheckbox()
+                .fillTextField();
+
+
     }
     @Test
     public void userLogin() {
@@ -41,15 +40,12 @@ public class UserLogin extends TestBase {
                 .clickOnLoginButton();
         safetyPage.clickAdditionally();
         safetyPage .clickRegisterLink();
-        baseClass.addUserCookie();
-      //  baseClass.readCookieFile();
-        loginPage.loginPageForCookies(params.LOGIN_URL);
-//
-//        loginPage.fillLoginField()
-//                 .fillPasswordField(params.PASSWORD);
-//        baseClass.clickOnButtonWithValue("Login");
-        marketPage.clickOnDesktopDrobDown()
-                .clickOnDesktopMac();
-        mainPage.clickOnAddCart(params.ADD_TO_CARD);
+        loginPage.fillLoginField()
+                 .fillPasswordField(params.PASSWORD);
+        baseClass.clickOnButtonWithValue("Login");
+        baseClass.getUserCookie();
+        marketPage.clickOnDesktopDrobDown();
+//                .clickOnDesktopMac();
+        mainPage.clickOnButtonWithText(params.ADD_TO_CARD);
     }
 }

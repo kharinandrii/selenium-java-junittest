@@ -8,4 +8,5 @@ public class MainPageSteps implements En {
 
         });
     }
+    //TODo закончить имплементацию кукумбера
 }

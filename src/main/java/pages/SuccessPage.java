@@ -17,8 +17,6 @@ public class SuccessPage extends BaseClass{
 
     public SuccessPage getSuccessMessage(String expectedMessage) {
        String actualResult = successMessage.getText();
-        System.out.println(actualResult);
-        System.out.println(expectedMessage);
         assert actualResult.equals(expectedMessage);
         return this;
     }

@@ -1,8 +1,11 @@
 package pages;
 
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.Set;
 
 public class RegisterPage extends BaseClass {
     public RegisterPage(WebDriver driver) {
@@ -85,7 +88,7 @@ public class RegisterPage extends BaseClass {
         clickOnElement(checkBox);
         return this;
     }
-    //TODO закончить с регистрации - создать класс с следующей после регистрации страницей
+
 
 
 }

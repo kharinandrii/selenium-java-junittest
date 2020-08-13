@@ -21,6 +21,7 @@ public class TestBase {
     BaseClass baseClass;
     LoginPage loginPage;
     MarketPage marketPage;
+    ProductPage productPage;
 
     @BeforeClass
     public void setUP() {
@@ -37,6 +38,7 @@ public class TestBase {
         baseClass = PageFactory.initElements(driver,BaseClass.class);
         loginPage = PageFactory.initElements(driver, LoginPage.class);
         marketPage = PageFactory.initElements(driver,MarketPage.class );
+        productPage = PageFactory.initElements(driver, ProductPage.class);
 
     }
     @AfterClass

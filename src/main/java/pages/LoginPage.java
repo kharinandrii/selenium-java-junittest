@@ -17,6 +17,7 @@ public class LoginPage extends BaseClass {
 
     public LoginPage fillLoginField() {
         String login = hashMap.get("email");
+        System.out.println(login);
         sendKeysData(loginField, login);
         return this;
     }
